@@ -1,0 +1,148 @@
+/*=======================================
+Importing fonts 
+=======================================*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Quicksand:wght@300..700&display=swap");
+
+/*=======================================
+Custom variables 
+=======================================*/
+:root {
+  /* Color palatte */
+  --clr-primary-500: #19a7ce;
+  --clr-secondary-500: #146c94;
+  --clr-neutral-500: #ddf2f8;
+  --clr-neutral-200: #e8f6fa;
+  --clr-bg: #f6f1f1;
+  --clr-accent: #01131b;
+  --clr-inverted-accent: #fefdfd;
+
+  --shadow: rgba(0, 0, 0, 0.5);
+
+  /* Font pair */
+  --ff-heading: "Oswald";
+  --ff-body: "Quicksand";
+
+  /* Font size */
+  --fs-h1: clamp(1.75rem, 3vw, 4rem);
+  --fs-h2: clamp(1.25rem, 2.25vw, 2.5rem);
+  --fs-h3: clamp(1rem, 2vw, 1.5rem);
+  --fs-p: clamp(0.875rem, 1.25vw, 1rem);
+
+  /* Font weight */
+  --fw-bold: 800;
+  --fw-semi-bold: 700;
+  --fw-regular: 500;
+  --fw-light: 400;
+
+  /* Desktop margin/paddings */
+  --body-padding-lg: 5em;
+  --body-padding-sm: 3em;
+  --body-padding-xs: 2em;
+
+  /* Content gap */
+  --content-gap-lg: 2em;
+  --content-gap-sm: 1em;
+  --content-gap-xs: 0.5em;
+
+  --gap-lg: 2em;
+  --gap-sm: 1.5em;
+}
+
+/*=======================================
+Modern CSS Resets
+=======================================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+figure,
+blockquote,
+dl,
+dd {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semi-bold);
+}
+
+p {
+  font-family: var(--ff-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-regular);
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  font-family: var(--ff-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-semi-bold);
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  display: inline-block;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -653,8 +653,8 @@ Contact
   line-height: 1;
   background-color: var(--clr-inverted-accent);
   border-radius: 50%;
-  inline-size: 1.5em;
-  block-size: 1.5em;
+  inline-size: 1.60em;
+  block-size: 1.60em;
   padding: 0.35em;
   transition: 250ms ease;
 }

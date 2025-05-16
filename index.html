@@ -6,7 +6,7 @@
     <title>Creative Stack</title>
 
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="img/svg/Logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="assests/svg/Logo.svg" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -16,6 +16,9 @@
     />
   </head>
   <body>
+    <!--========================================
+    Header section 
+    ===========================================-->
     <header id="header">
       <div class="head wrapper">
         <div class="logo">
@@ -23,14 +26,18 @@
         </div>
         <nav>
           <ul class="primary_nav">
-            <li class="child_one"><a href="#">Portfolio</a></li>
-            <li><a href="#" class="primary_btn">Let's Talk</a></li>
+            <li class="child_one"><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact" class="primary_btn">Let's Talk</a></li>
           </ul>
         </nav>
       </div>
     </header>
+
     <main>
-      <section class="hero_header center_align">
+      <!--========================================
+      Hero-header section
+      ===========================================-->
+      <section class="hero_header center_align" id="home">
         <div class="wrapper flex_container">
           <div class="hero_header-left_col">
             <h3>Hi, I am</h3>
@@ -65,6 +72,10 @@
           </div>
         </div>
       </section>
+
+      <!--========================================
+      Banner section
+      ===========================================-->
       <section class="banner center_align">
         <div class="wrapper flex_container">
           <div class="banner-left_col">
@@ -83,7 +94,11 @@
           </div>
         </div>
       </section>
-      <section class="about center_align">
+
+      <!--========================================
+      About section
+      ===========================================-->
+      <section class="about center_align" id="about">
         <div class="wrapper flex_container">
           <div class="services grid-auto_fit">
             <div class="service_card web_design">
@@ -120,7 +135,11 @@
           </div>
         </div>
       </section>
-      <section class="testimonial center_align">
+
+      <!--========================================
+      Testimonial section
+      ===========================================-->
+      <section class="testimonial center_align" id="testimonial">
         <div class="wrapper">
           <div class="testimonial_content">
             <h3 class="client">Jane Doe - CEO of Windy</h3>
@@ -134,7 +153,11 @@
           <div class="dots"></div>
         </div>
       </section>
-      <section class="portfolio">
+
+      <!--========================================
+      Portfolio section
+      ===========================================-->
+      <section class="portfolio" id="portfolio">
         <div class="wrapper">
           <div class="section_content">
             <h2 class="section-title">Portfolio</h2>
@@ -144,21 +167,25 @@
             </p>
           </div>
           <div class="portfolio_gallery">
-            <div class="gallery_filter">
+            <!-- <div class="gallery_filter">
               <button class="filter_btn active_filter_btn">All</button>
               <button class="filter_btn">Web Design</button>
               <button class="filter_btn">SEO</button>
               <button class="filter_btn">UI/UX</button>
-            </div>
+            </div> -->
             <div class="gallery" id="portfolio_grid"></div>
 
-            <button class="load_more primary_btn" id="load_More">
+            <!-- <button class="load_more primary_btn" id="load_More"> -->
               Load More
             </button>
           </div>
         </div>
       </section>
-      <section class="contact">
+
+      <!--========================================
+      Contact section
+      ===========================================-->
+      <section class="contact" id="contact">
         <div class="wrapper flex_container">
           <div class="contact-left_col">
             <img src="assests/img/contact.webp" alt="" />
@@ -166,20 +193,20 @@
           <div class="contact-right_col">
             <h2 class="section-title">Contact Me</h2>
             <div class="contact_info">
-              <a href="#">
+              <a href="https://mail.google.com/mail/?view=cm&to=prottoy.seo@gmail.com" target="_blank">
                 <i class="fa-solid fa-envelope"></i>
                 <span>prottoy.seo@gmail.com</span>
               </a>
-              <a href="#">
+              <a href="https://wa.link/9f6bto" target="_blank">
                 <i class="fa-solid fa-phone"></i>
-                <span>+8801317275942</span>
+                <span>Connect me through Whatsapp</span>
               </a>
             </div>
             <div class="social_media">
-              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.linkedin.com/in/prottoymodak" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/prottoy.modak.605893" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/prottoy.seo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://x.com/ProttoySeo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
             <div class="newsletter">
               <h3>Subscribe to My Newsletter</h3>
@@ -204,16 +231,20 @@
         </div>
       </section>
     </main>
+
+    <!--========================================
+      Footer section
+      ===========================================-->
     <footer class="center_align">
       <div class="wrapper">
         <div class="footer_nav">
           <h2 class="footer-logo">CreativeStack</h2>
           <nav>
             <ul class="primary_nav">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
         </div>

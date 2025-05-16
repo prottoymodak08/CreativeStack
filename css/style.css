@@ -73,26 +73,6 @@ dd {
   margin: 0;
 }
 
-h1 {
-  font-size: var(--fs-h1);
-}
-
-h2 {
-  font-size: var(--fs-h2);
-}
-
-h3 {
-  font-size: var(--fs-h3);
-  font-weight: var(--fw-semi-bold);
-}
-
-p {
-  font-family: var(--ff-body);
-  font-size: var(--fs-p);
-  font-weight: var(--fw-regular);
-  margin: 0;
-}
-
 ul,
 ol {
   list-style: none;
@@ -107,15 +87,6 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   overflow-x: hidden;
-}
-
-a {
-  font-family: var(--ff-body);
-  font-size: var(--fs-p);
-  font-weight: var(--fw-semi-bold);
-  text-decoration: none;
-  text-decoration-skip-ink: auto;
-  display: inline-block;
 }
 
 img,
@@ -144,5 +115,211 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/*=======================================
+Utility classes
+=======================================*/
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semi-bold);
+}
+
+p {
+  font-family: var(--ff-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-regular);
+  margin: 0;
+}
+
+.primary_btn {
+  cursor: pointer;
+  font-family: var(--ff-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-semi-bold);
+  background-color: var(--clr-secondary-500);
+  color: var(--clr-inverted-accent) !important;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.75em 1.75em;
+  transition: 250ms ease;
+}
+
+a {
+  font-family: var(--ff-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-semi-bold);
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  display: inline-block;
+}
+
+.section-title {
+  color: var(--clr-secondary-500);
+}
+
+.section-details {
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-accent);
+  padding-block: var(--content-gap-sm);
+}
+
+@media (min-width: 40em) {
+  .primary_btn {
+    padding: 1em 3.5em;
+  }
+
+  .section-details {
+    padding-block: var(--content-gap-lg);
+  }
+}
+
+/*=======================================
+Layout classes
+=======================================*/
+.wrapper {
+  inline-size: 90%;
+  max-inline-size: 90em;
+  margin: 0 auto;
+}
+
+.center_align {
+  display: flex;
+  align-items: center;
+}
+
+.flex_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+.grid-auto_fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 40%), 1fr));
+  gap: var(--gap-sm);
+}
+
+@media (min-width: 40em) {
+  .flex_container {
+    flex-direction: row;
+    gap: var(--gap-lg);
+  }
+
+  .grid-auto_fit {
+    gap: var(--gap-lg);
+  }
+}
+
+/*=======================================
+Header
+=======================================*/
+header {
+  background-color: var(--clr-bg);
+  min-block-size: 10vh;
+  padding-block-start: var(--body-padding-sm);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+.logo > h2 {
+  cursor: pointer;
+  color: var(--clr-primary-500);
+  transition: 250ms ease;
+}
+
+.primary_nav {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+.primary_nav li {
+  cursor: pointer;
+  transition: 250ms ease;
+}
+
+.primary_nav .child_one {
+  display: none;
+}
+
+.primary_nav a {
+  color: var(--clr-secondary-500);
+}
+
+@media (min-width: 40em) {
+  .primary_nav li:nth-child(1) {
+    display: block;
+  }
+
+  .section-details {
+    padding-block: var(--content-gap-lg);
+  }
+}
+
+/*=======================================
+Hero header
+=======================================*/
+
+/*=======================================
+Banner
+=======================================*/
+
+/*=======================================
+About
+=======================================*/
+
+/*=======================================
+Testimonial
+=======================================*/
+
+/*=======================================
+Portfolio
+=======================================*/
+
+/*=======================================
+Contact
+=======================================*/
+
+/*=======================================
+Footer
+=======================================*/
+
+/*=======================================
+Hover & focus visible transitions
+=======================================*/
+@media (hover: hover) {
+  .primary_btn:hover,
+  .primary_btn:focus-visible {
+    transform: translateY(-0.25em);
+    box-shadow: 2px 2px 8px var(--shadow);
+  }
+
+  .primary_btn:active {
+    transform: translateY(0.25em);
+  }
+
+  .logo:hover h2 {
+    transform: scale(1.05);
+  }
+
+  .primary_nav li:hover {
+    transform: translateY(-0.25em);
   }
 }

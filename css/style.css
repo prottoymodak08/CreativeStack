@@ -145,6 +145,10 @@ p {
   margin: 0;
 }
 
+strong {
+  font-weight: var(--fw-bold);
+}
+
 .primary_btn {
   cursor: pointer;
   font-family: var(--ff-body);
@@ -172,7 +176,6 @@ a {
 }
 
 .section-details {
-  font-weight: var(--fw-semi-bold);
   color: var(--clr-accent);
   padding-block: var(--content-gap-sm);
 }
@@ -433,7 +436,6 @@ About
   }
 
   .about-content {
-    align-self: flex-start;
     inline-size: 50%;
   }
 }
@@ -570,6 +572,11 @@ Portfolio
     padding-block: var(--body-padding-lg);
   }
 
+  .portfolio_description {
+    inline-size: 80%;
+    margin: 0 auto;
+  }
+
   .portfolio_gallery {
     margin-block-start: 3em;
   }
@@ -653,8 +660,8 @@ Contact
   line-height: 1;
   background-color: var(--clr-inverted-accent);
   border-radius: 50%;
-  inline-size: 1.60em;
-  block-size: 1.60em;
+  inline-size: 1.6em;
+  block-size: 1.6em;
   padding: 0.35em;
   transition: 250ms ease;
 }
@@ -715,6 +722,7 @@ form > button {
   block-size: calc(100% - 4px);
   aspect-ratio: 1;
   border-radius: 50%;
+  transition: 250ms ease;
 }
 
 form > button > i {
@@ -864,6 +872,12 @@ Hover & focus visible transitions
   .contact_info > a:hover,
   .contact_info > a:focus-visible {
     color: var(--clr-secondary-500);
+  }
+
+  .submit:hover,
+  .submit:focus-visible {
+    transform: scale(1.05);
+    background-color: var(--clr-secondary-500);
   }
 
   .social_media > a:hover {

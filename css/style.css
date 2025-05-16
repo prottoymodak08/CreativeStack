@@ -121,6 +121,10 @@ select {
 /*=======================================
 Utility classes
 =======================================*/
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-size: var(--fs-h1);
 }
@@ -171,6 +175,20 @@ a {
   font-weight: var(--fw-semi-bold);
   color: var(--clr-accent);
   padding-block: var(--content-gap-sm);
+}
+
+::-webkit-scrollbar {
+  inline-size: 0.75em;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-neutral-200);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--clr-primary-500), var(--clr-secondary-500));
+  border: 2px solid var(--clr-neutral-200);
+  border-radius: 1em;
 }
 
 @media (min-width: 40em) {

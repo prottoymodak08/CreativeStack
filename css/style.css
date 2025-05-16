@@ -343,18 +343,227 @@ Hero header
 /*=======================================
 Banner
 =======================================*/
+.banner {
+  background-color: var(--clr-secondary-500);
+  padding-block: var(--body-padding-sm);
+}
+
+.banner-left_col > h2 {
+  color: var(--clr-inverted-accent);
+  margin-block-end: var(--content-gap-sm);
+}
+
+.banner-left_col > p {
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-inverted-accent);
+}
+
+.banner-right_col {
+  overflow: hidden;
+  border-radius: 0.5em;
+  position: relative;
+}
+
+.banner-right_col::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background: var(--clr-accent);
+  opacity: 0.6;
+}
+
+@media (min-width: 40em) {
+  .banner-left_col {
+    inline-size: 60%;
+  }
+
+  .banner-right_col {
+    inline-size: 30%;
+  }
+}
 
 /*=======================================
 About
 =======================================*/
+.about {
+  background-color: var(--clr-bg);
+  padding-block: var(--body-padding-sm);
+}
+
+.service_card {
+  background-color: var(--clr-neutral-500);
+  color: var(--clr-secondary-500);
+  text-align: center;
+  border-radius: 0.5em;
+  box-shadow: 5px 5px 8px var(--shadow);
+  padding: 1em;
+  transition: 250ms ease;
+}
+
+.web_design {
+  background-color: var(--clr-secondary-500);
+  color: var(--clr-inverted-accent);
+}
+
+@media (min-width: 40em) {
+  .about {
+    padding-block: var(--body-padding-lg);
+  }
+
+  .services {
+    inline-size: 40%;
+  }
+
+  .about-content {
+    align-self: flex-start;
+    inline-size: 50%;
+  }
+}
+
+@media (max-width: 50em) {
+  .about .flex_container {
+    flex-direction: column;
+  }
+  .services {
+    inline-size: 80%;
+  }
+
+  .about-content {
+    inline-size: 100%;
+  }
+}
 
 /*=======================================
 Testimonial
 =======================================*/
+.testimonial {
+  background-color: var(--clr-neutral-500);
+  padding-block: var(--body-padding-sm);
+  display: block;
+  flex-direction: column;
+}
+
+.testimonial_content {
+  inline-size: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.client {
+  color: var(--clr-secondary-500);
+}
+
+.testify {
+  font-weight: var(--fw-regular);
+  padding-block: var(--content-gap-lg);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.slide_dot {
+  inline-size: 0.75em;
+  block-size: 0.75em;
+  background-color: var(--clr-primary-500);
+  border: none;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.active_dot {
+  inline-size: 2em;
+  border-radius: 0.5em;
+  opacity: 1;
+}
+
+@media (min-width: 40em) {
+  .testimonial_content {
+    inline-size: 60%;
+  }
+
+  .section_content {
+    inline-size: 60%;
+  }
+}
 
 /*=======================================
 Portfolio
 =======================================*/
+.portfolio {
+  background-color: var(--clr-bg);
+  padding-block: var(--body-padding-sm);
+  text-align: center;
+}
+
+.section_content {
+  inline-size: 80%;
+  margin: 0 auto;
+}
+
+.gallery_filter {
+  font-family: var(--ff-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-semi-bold);
+  display: flex;
+  justify-content: space-around;
+  margin-top: var(--content-gap-sm);
+  margin-inline: auto;
+}
+
+.filter_btn {
+  background-color: transparent;
+  color: var(--clr-secondary-500);
+  border: none;
+}
+
+.active_filter_btn {
+  cursor: pointer;
+  font-family: var(--ff-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-semi-bold);
+  background-color: var(--clr-secondary-500);
+  color: var(--clr-inverted-accent) !important;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.75em 1.75em;
+}
+
+.gallery {
+  margin-block-start: 1.5em;
+}
+
+.gallery img {
+  border: 0.25em solid var(--clr-primary-500);
+  border-radius: 1em;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.load_more {
+  margin-block-start: var(--gap-lg);
+  margin-inline: auto;
+}
+
+@media (min-width: 40em) {
+  .portfolio {
+    padding-block: var(--body-padding-lg);
+  }
+
+  .portfolio_gallery {
+    margin-block-start: 3em;
+  }
+
+  .gallery_filter {
+    inline-size: 45%;
+  }
+
+  .gallery {
+    margin-top: var(--body-padding-lg);
+  }
+}
 
 /*=======================================
 Contact
@@ -384,5 +593,19 @@ Hover & focus visible transitions
 
   .primary_nav li:hover {
     transform: translateY(-0.25em);
+  }
+
+  .service_card:nth-child(odd):hover {
+    transform: rotate(10deg) scale(1.05);
+  }
+
+  .service_card:nth-child(even):hover {
+    transform: rotate(-10deg) scale(1.05);
+  }
+
+  .social_icon:hover,
+  .social_icon:focus-visible {
+    transform: translateY(-0.25em);
+    filter: drop-shadow(2px 2px 4px var(--shadow));
   }
 }

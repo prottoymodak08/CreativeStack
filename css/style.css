@@ -276,6 +276,69 @@ header {
 /*=======================================
 Hero header
 =======================================*/
+.hero_header {
+  background-color: var(--clr-bg);
+  padding-block: var(--body-padding-xs);
+}
+
+.hero_header-left_col {
+  order: 2;
+}
+
+.hero_header-left_col > h3 {
+  color: var(--clr-secondary-500);
+}
+
+.hero_header-left_col > h1 {
+  color: var(--clr-primary-500);
+}
+
+.hero_header-left_col > p {
+  color: var(--clr-accent);
+  font-weight: var(--fw-regular);
+  padding-block: var(--content-gap-sm);
+}
+
+.experience_counter {
+  inline-size: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+.counter > h2 {
+  font-size: var(--fs-h1);
+  color: var(--clr-primary-500);
+}
+
+.counter > h3 {
+  color: var(--clr-secondary-500);
+}
+
+@media (min-width: 40em) {
+  .hero_header {
+    padding-block: var(--body-padding-xs);
+  }
+
+  .hero_header-left_col {
+    inline-size: 50%;
+    order: 0;
+  }
+
+  .hero_header-right_col {
+    inline-size: 45%;
+  }
+
+  .hero_header-left_col > p {
+    padding-block: var(--content-gap-lg);
+  }
+
+  .experience_counter {
+    gap: var(--content-gap-sm);
+  }
+}
 
 /*=======================================
 Banner

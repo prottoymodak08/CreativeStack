@@ -485,7 +485,7 @@ Testimonial
 }
 
 .testimonial_content {
-  inline-size: 80%;
+  inline-size: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -540,7 +540,7 @@ Portfolio
 }
 
 .section_content {
-  inline-size: 80%;
+  inline-size: 100%;
   margin: 0 auto;
 }
 

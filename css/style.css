@@ -374,6 +374,27 @@ Banner
   margin-block-end: var(--content-gap-sm);
 }
 
+.typewriter_effect {
+  position: relative;
+}
+
+.typewriter_effect::after {
+  content: "|";
+  position: absolute;
+  right: -0.3em;
+  animation: blink infinite 1s ease;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .banner-left_col > p {
   font-weight: var(--fw-semi-bold);
   color: var(--clr-inverted-accent);

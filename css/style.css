@@ -208,7 +208,7 @@ a {
 Layout classes
 =======================================*/
 .wrapper {
-  inline-size: 90%;
+  inline-size: 80%;
   max-inline-size: 90em;
   margin: 0 auto;
 }

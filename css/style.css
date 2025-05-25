@@ -249,7 +249,7 @@ Header
 header {
   background-color: var(--clr-bg);
   min-block-size: 10vh;
-  padding-block-start: var(--body-padding-sm);
+  padding-block-start: var(--body-padding-xs);
 }
 
 .head {
@@ -545,14 +545,15 @@ Portfolio
 }
 
 .gallery_filter {
+  inline-size: 100%;
   font-family: var(--ff-body);
   font-size: var(--fs-p);
   font-weight: var(--fw-semi-bold);
   display: flex;
   gap: var(--content-gap-xs);
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: var(--content-gap-sm);
+  justify-content: center;
+  margin: var(--content-gap-lg);
   margin-inline: auto;
 }
 
@@ -579,12 +580,11 @@ Portfolio
   flex-direction: column;
   justify-content: center;
   margin-inline: auto;
-  padding-block: 1em;
 }
 
 .gallery_images {
   columns: 4 20em;
-  gap: var(--gap-sm);
+  gap: 0.5em;
 }
 
 .img_card {
@@ -592,7 +592,7 @@ Portfolio
   overflow: hidden;
   border: solid 2px var(--clr-primary-500);
   border-radius: 0.5em;
-  margin-block-end: var(--gap-sm);
+  margin-block-end: 0.5em;
 }
 
 .load_more {
@@ -610,16 +610,13 @@ Portfolio
     margin: 0 auto;
   }
 
-  .portfolio_gallery {
-    margin-block-start: 3em;
-  }
-
   .gallery_filter {
     inline-size: 45%;
+    justify-content: space-around;
   }
 
   .gallery {
-    margin-top: var(--body-padding-lg);
+    margin-top: var(--content-gap-lg);
   }
 }
 
@@ -864,6 +861,72 @@ footer {
   .footer_nav .primary_nav a {
     display: block;
   }
+}
+
+/*=======================================
+Lightbox
+=======================================*/
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: hsla(198, 93%, 5%, 0.7);
+}
+
+.lightbox_show {
+  display: block;
+}
+
+.lightbox_wrapper {
+  position: absolute;
+  background-color: var(--clr-inverted-accent);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  inline-size: 90%;
+  max-inline-size: 62.5em;
+  border-radius: 1em;
+  padding: var(--body-padding-xs);
+}
+
+.lightbox_details {
+  position: relative;
+  margin-block-end: var(--gap-sm);
+}
+
+.lightbox_title {
+  color: var(--clr-primary-500);
+}
+
+.lightbox_category {
+  font-weight: var(--fw-semi-bold);
+}
+
+.lightbox_link {
+  color: var(--clr-secondary-500);
+}
+
+.lightbox_close {
+  position: absolute;
+  top: -1em;
+  right: -1em;
+}
+
+.cross {
+  font-size: 1.5em;
+  opacity: 0.4;
+  background-color: transparent;
+  border: none;
+}
+
+.lightbox_preview {
+  max-inline-size: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 1em;
 }
 
 /*=======================================

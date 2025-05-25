@@ -621,6 +621,16 @@ Portfolio
 .gallery_images {
   columns: 4 20em;
   gap: 0.5em;
+  opacity: 0;
+}
+
+.gallery_images.hidden_gallery {
+  opacity: 0;
+  transform: translateY(6rem);
+}
+
+.gallery_images.animate_gallery {
+  animation: fadeSlideUp 1s ease-out forwards;
 }
 
 .img_card {
@@ -659,6 +669,17 @@ Portfolio
 @media (max-width: 50em) {
   .gallery_filter {
     inline-size: 90%;
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

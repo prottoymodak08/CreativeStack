@@ -217,6 +217,38 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target === lightbox) closeLightbox();
   });
 
+  const galleryImages = document.querySelector(".gallery_images");
+  const gallerySection = document.querySelector(".gallery");
+
+  galleryImages.classList.add("hidden_gallery");
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+  function triggerAnimation() {
+    requestAnimationFrame(() => {
+      galleryImages.classList.remove("hidden_gallery");
+      galleryImages.classList.add("animate_gallery");
+    });
+  }
+
+  function handleScroll() {
+    if (isInViewport(gallerySection)) {
+      triggerAnimation();
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }
+
+  setTimeout(() => {
+    if (isInViewport(gallerySection)) {
+      triggerAnimation();
+    } else {
+      window.addEventListener("scroll", handleScroll);
+    }
+  }, 200);
+
   //============================================
   // Entrence Animation
   // ===========================================

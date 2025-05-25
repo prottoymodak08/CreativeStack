@@ -550,9 +550,9 @@ Portfolio
   font-size: var(--fs-p);
   font-weight: var(--fw-semi-bold);
   display: flex;
-  gap: var(--content-gap-xs);
+  gap: var(--content-gap-sm);
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   margin: var(--content-gap-lg);
   margin-inline: auto;
 }

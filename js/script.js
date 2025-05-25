@@ -75,6 +75,58 @@ document.addEventListener("DOMContentLoaded", function () {
   typewriterEffect();
 
   //============================================
+  // Testimonial slider
+  // ===========================================
+  const content = document.querySelector(".testimonial_content");
+  const dots = document.querySelector(".dots");
+  let data = [];
+  let currentTestimonial = 0;
+
+  fetch("data/testimonial.json")
+    .then((res) => res.json())
+    .then((json) => {
+      data = json;
+      buildDots();
+      showTestimonial(0);
+    })
+    .catch(console.error);
+
+  function buildDots() {
+    dots.innerHTML = "";
+    data.forEach((_, i) => {
+      const btn = document.createElement("button");
+      btn.className = "slide_dot";
+      if (i === 0) btn.classList.add("active_dot");
+      btn.addEventListener("click", () => {
+        if (i !== currentTestimonial) showTestimonial(i);
+      });
+      dots.appendChild(btn);
+    });
+  }
+
+  function showTestimonial(index) {
+    const direction = index > currentTestimonial ? "right" : "left";
+    currentTestimonial = index;
+
+    dots.querySelectorAll("button").forEach((b, i) => {
+      b.classList.toggle("active_dot", i === index);
+    });
+
+    const { title, description } = data[index];
+    content.classList.remove("slide-in-left", "slide-in-right");
+    void content.offsetWidth;
+
+    content.innerHTML = `
+      <h3 class="client">${title}</h3>
+      <p class="testify">${description}</p>
+    `;
+
+    content.classList.add(
+      direction === "right" ? "slide-in-right" : "slide-in-left"
+    );
+  }
+
+  //============================================
   // Portfolio Gallery
   // ===========================================
   const galleryList = document.querySelector(".gallery_images");

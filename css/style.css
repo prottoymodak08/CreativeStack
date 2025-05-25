@@ -488,6 +488,8 @@ Testimonial
   inline-size: 100%;
   margin: 0 auto;
   text-align: center;
+  opacity: 1;
+  transition: 250ms ease;
 }
 
 .client {
@@ -518,6 +520,40 @@ Testimonial
   inline-size: 2em;
   border-radius: 0.5em;
   opacity: 1;
+}
+
+.testimonial_content.slide-in-left,
+.testimonial_content.slide-in-right {
+  opacity: 0;
+}
+
+.testimonial_content.slide-in-left {
+  animation: slideInLeft 0.5s ease forwards;
+}
+.testimonial_content.slide-in-right {
+  animation: slideInRight 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 
 @media (min-width: 40em) {

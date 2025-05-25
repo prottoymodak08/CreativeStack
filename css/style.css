@@ -382,7 +382,7 @@ Banner
   content: "|";
   position: absolute;
   right: -0.3em;
-  animation: blink infinite 1s ease;
+  animation: blink infinite 1s;
 }
 
 @keyframes blink {

@@ -31,49 +31,48 @@ document.addEventListener("DOMContentLoaded", function () {
   // TypeWriter Effect
   // ===========================================
   const typeWriterWords = [
-    "Fontend Developer",
+    "Frontend Developer",
     "SEO Enthusiast",
     "Web Designer",
     "UI/UX Designer",
-    "Amature Designer",
+    "Amateur Designer",
   ];
 
-  let typewriterSpan = document.querySelector(".typewriter_effect");
+  const typewriterSpan = document.querySelector(".typewriter_effect");
 
   let currentWordIndex = 0;
   let currentCharIndex = 0;
   let isDeleting = false;
 
+  let typingSpeed = 100;
+  let deletingSpeed = 50;
+  let pauseAfterTyping = 1000;
+  let pauseBeforeTyping = 300;
+
   function typewriterEffect() {
-    let currentWord = typeWriterWords[currentWordIndex];
-    let displayWord;
-
-    if (!isDeleting) {
-      currentCharIndex++;
-      displayWord = currentWord.substring(0, currentCharIndex);
-    } else {
-      currentCharIndex--;
-      displayWord = currentWord.substring(0, currentCharIndex);
-    }
-
-    typewriterSpan.textContent = displayWord;
-
-    let typeWriterEffectDelay = 100;
+    const currentWord = typeWriterWords[currentWordIndex];
 
     if (isDeleting) {
-      typeWriterEffectDelay = 50;
+      currentCharIndex--;
+    } else {
+      currentCharIndex++;
     }
 
-    if (!isDeleting && currentCharIndex == currentWord.length) {
-      typeWriterEffectDelay = 1000;
+    const displayText = currentWord.substring(0, currentCharIndex);
+    typewriterSpan.textContent = displayText;
+
+    let nextDelay = isDeleting ? deletingSpeed : typingSpeed;
+
+    if (!isDeleting && currentCharIndex === currentWord.length) {
+      nextDelay = pauseAfterTyping;
       isDeleting = true;
-    } else if (isDeleting && currentCharIndex == 0) {
-      typeWriterEffectDelay = 200;
+    } else if (isDeleting && currentCharIndex === 0) {
       isDeleting = false;
       currentWordIndex = (currentWordIndex + 1) % typeWriterWords.length;
+      nextDelay = pauseBeforeTyping;
     }
 
-    setTimeout(typewriterEffect, typeWriterEffectDelay);
+    setTimeout(typewriterEffect, nextDelay);
   }
 
   typewriterEffect();

@@ -549,6 +549,8 @@ Portfolio
   font-size: var(--fs-p);
   font-weight: var(--fw-semi-bold);
   display: flex;
+  gap: var(--content-gap-xs);
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-top: var(--content-gap-sm);
   margin-inline: auto;
@@ -573,7 +575,6 @@ Portfolio
 }
 
 .gallery {
-  inline-size: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;

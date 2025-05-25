@@ -835,6 +835,7 @@ Footer
 footer {
   background-color: var(--clr-secondary-500);
   padding-block: var(--body-padding-sm);
+  text-align: center;
 }
 
 .footer_nav,
@@ -873,6 +874,7 @@ footer {
 
 .page_policy .primary_nav {
   justify-content: center;
+  display: none;
 }
 
 .copy_right {
@@ -892,6 +894,10 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .page_policy .primary_nav {
+    display: flex;
   }
 
   .footer_nav .primary_nav a {

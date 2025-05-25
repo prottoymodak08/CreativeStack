@@ -8,19 +8,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let target = parseInt(counter.getAttribute("data-value"));
     let current = 0;
 
-    let steps = 100;
-    let incriment = Math.ceil(target / steps);
+    let duration = 4000;
+    let intervalTime = 60;
+    let steps = Math.floor(duration / intervalTime);
+    let increment = Math.max(1, Math.floor(target / steps));
 
-    let interval = setInterval(() => {
-      current += incriment;
+    setTimeout(() => {
+      let interval = setInterval(() => {
+        current += increment;
 
-      if (current >= target) {
-        counter.textContent = target + "+";
-        clearInterval(interval);
-      } else {
-        counter.textContent = current + "+";
-      }
-    }, 50);
+        if (current >= target) {
+          counter.textContent = target + "+";
+          clearInterval(interval);
+        } else {
+          counter.textContent = current + "+";
+        }
+      }, intervalTime);
+    }, 1000);
   });
 
   //============================================
@@ -211,5 +215,26 @@ document.addEventListener("DOMContentLoaded", function () {
   lightboxCloseBtn.addEventListener("click", closeLightbox);
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) closeLightbox();
+  });
+
+  //============================================
+  // Entrence Animation
+  // ===========================================
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slide-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  document.querySelectorAll(".section_left, .section_right").forEach((el) => {
+    observer.observe(el);
   });
 });

@@ -1023,3 +1023,32 @@ Hover & focus visible transitions
     transform: translateY(-0.25em);
   }
 }
+
+/*=======================================
+Entrence animation
+=======================================*/
+
+.section_left,
+.section_right {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 800ms ease-out;
+}
+
+.section_left.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.section_right.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.section_left {
+  transform: translateX(-100%);
+}
+
+.section_right {
+  transform: translateX(100%);
+}

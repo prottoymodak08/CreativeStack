@@ -573,14 +573,25 @@ Portfolio
 }
 
 .gallery {
-  margin-block-start: 1.5em;
+  inline-size: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline: auto;
+  padding-block: 1em;
 }
 
-.gallery img {
-  border: 0.25em solid var(--clr-primary-500);
-  border-radius: 1em;
-  inline-size: 100%;
-  block-size: auto;
+.gallery_images {
+  columns: 4 20em;
+  gap: var(--gap-sm);
+}
+
+.img_card {
+  position: relative;
+  overflow: hidden;
+  border: solid 2px var(--clr-primary-500);
+  border-radius: 0.5em;
+  margin-block-end: var(--gap-sm);
 }
 
 .load_more {

@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "SEO Enthusiast",
     "Web Designer",
     "UI/UX Designer",
+    "Amature Designer",
   ];
 
   let typewriterSpan = document.querySelector(".typewriter_effect");
